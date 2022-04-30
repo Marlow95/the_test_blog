@@ -1,0 +1,21 @@
+{
+    "name": "vendor/the_test_blog",
+    "description": "A test blog made with vanilla php",
+    "authors": [
+        {
+            "name": "Marlow Collins",
+            "email": "marlowcollins95@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Vendor\\TheTestBlog\\": "app/"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}
