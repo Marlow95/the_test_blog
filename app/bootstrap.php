@@ -1,8 +1,12 @@
 <?php
+
+ob_start();
+session_start();
+
 //Database Connection
 require_once(__DIR__ . '/Database.php');
 //Imports ENV Variables
-require_once('./get_env.php');
+require_once('../get_env.php');
 
 //Autoload Models
 spl_autoload_register(fn($class)=> require_once('Model/'. $class . '.php'));
@@ -20,6 +24,16 @@ $db = new Database(
 
 $db->connectDatabase();
 
+
+
+/* Example of How to Access Data
+
 $blog_users = new Users($db);
 $get_all_users = $blog_users->getAll();
-print_r($get_all_users);
+
+foreach($get_all_users as $users){
+    print_r($users);
+};
+
+*/
+

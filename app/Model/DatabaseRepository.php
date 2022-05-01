@@ -3,8 +3,8 @@
 interface DatabaseRepository
 {
     function getAll();
-    function getOne();
+    function getOne($id);
     function post();
-    function update();
-    function delete();
+    function update($id);
+    function delete($id);
 }
