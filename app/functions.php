@@ -1,7 +1,7 @@
 <?php
 require_once(__DIR__ . '/bootstrap.php');
 
-
+//Renders posts on index.php
 function renderPosts(){
     global $db;
     $blog_posts = new Posts($db);
@@ -26,8 +26,10 @@ function renderPosts(){
 
 function renderArticle(){
     global $db;
+    $response = $_GET['id'];
+    $filter = filter_var($response, FILTER_SANITIZE_NUMBER_INT);
     $blog_article = new Posts($db);
-    $get_article = $blog_article->getOne($_GET['id']);
+    $get_article = $blog_article->getOne($filter);
 
     foreach($get_article as $posts){
         $card = <<<DELIMITER
@@ -43,8 +45,10 @@ function renderArticle(){
 
 function articleAuthor(){
     global $db;
+    $response = $_GET['author'];
+    $filter = filter_var($response, FILTER_SANITIZE_NUMBER_INT);
     $user = new Users($db);
-    $article_author = $user->getOne($_GET['author']);
+    $article_author = $user->getOne($filter);
     
     foreach($article_author as $author){
         $card = <<<DELIMITER
@@ -57,3 +61,44 @@ function articleAuthor(){
         echo ucwords($card);
     };
 }
+
+//Prints all posts on the post page
+function renderPostPage(){
+    global $db;
+    $blog_posts = new Posts($db);
+    $get_all_posts = $blog_posts->getAll();
+
+    foreach($get_all_posts as $posts){
+        $card = <<<DELIMITER
+            <div class="card mb-3 m-4">
+                <img src="https://placehold.co/300x150/png" height="300px" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title text-center"><a href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a></h5>
+                <p class="card-text">$posts->post_bio</p>
+                <p class="card-text"><small class="text-muted">$posts->created_at</small></p>
+                </div>
+            </div>
+        DELIMITER;
+        echo $card;
+    }
+}
+
+/*
+
+function renderOneCategories(){
+    global $db;
+    $blog_categories = new Categories($db);
+    $get_all_categories = $blog_categories->getOne();
+
+    foreach($get_all_categories as $category){
+
+        $tabs = <<<DELIMITER
+
+        DELIMITER;
+
+        echo $tabs;
+
+    }
+}
+
+*/
