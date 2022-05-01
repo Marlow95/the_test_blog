@@ -4,7 +4,7 @@ This is a simple crud app I made with vanilla php to practice planning Entities,
 Then execute this plan by applying functional and object-oriented programming.
 
 I also plan on adding some user auth then lastly updating the ui to make things look better. The purpose of this project is to practice Database Design &
-String Manipulation. Which is the most critical skill when programming the backend. Always improving yourfundamentals and applying the new things you know
+String Manipulation. Which is the most critical skill when programming the backend. Always improving your fundamentals and applying the new things you know
 in better ways is a core skill for building better programs.
 
 Database Design
