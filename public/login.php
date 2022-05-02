@@ -24,8 +24,14 @@
             <button type="submit" name="submit_login" class="btn btn-primary">Submit</button>
             <?php isset($_POST['submit_login']) ? loginUsers($email_login, $password_login) : ''; ?>
         </form>
-        <?php //Make session able to unset later ?>
-        <?php echo isset($_SESSION['failed_login']) ? '<h3 class="text-danger text-center">' . $_SESSION['failed_login'] . '</h3>': ''; ?>
+        <?php 
+
+        if(isset($_SESSION['failed_login'])){
+            $flash_error = $_SESSION['failed_login'];
+            unset($_SESSION['failed_login']);
+            echo('<h3 class="text-danger text-center">' . $flash_error . '</h3>');
+        }  
+        ?>
         </div>
         <div class="col-4 text-center align-self-center"><h1> (Or)</h1></div>
         <div class="col-4 border p-4">

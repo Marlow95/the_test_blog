@@ -64,11 +64,14 @@ class Users implements DatabaseRepository
         foreach($users_data as $user){
             if(password_verify($password, $user->password)){
                 $_SESSION['is_logged_in'] = true;
+                $_SESSION['user_id'] = $user->id;
+                $_SESSION['firstname'] = $user->firstname;
                 return header('Location: dashboard.php');
             } else {
 
+                $_SESSION['failed_login'] = "Incorrect password";
                 header('Location: login.php');
-                return $_SESSION['failed_login'] = "Incorrect password";
+                exit;
             }
         }
     }
