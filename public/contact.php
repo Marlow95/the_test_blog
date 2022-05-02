@@ -3,29 +3,29 @@
 
 <div class="container">
     <div class="row">
-        <h1>Contact Us</h1>
         <div class="col m-4 border">
+            <h1 class="m-4">Contact Us</h1>
             <form>
-            <div class="form-group m-4 row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                <div class="form-group m-4 row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group m-4 row">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Fullname</label>
-                <div class="col-sm-10">
-                <input type="fullname" class="form-control" id="inputPassword3" placeholder="Password">
+                <div class="form-group m-4 row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Fullname</label>
+                    <div class="col-sm-10">
+                    <input type="fullname" class="form-control" id="inputPassword3" placeholder="Password">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group m-4 row">
-                <textarea name="message" id="message" cols="30" rows="10"></textarea>
-            </div>
-            <div class="form-group m-4 row">
-                <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-group m-4 row">
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
                 </div>
-            </div>
+                <div class="form-group m-4 row">
+                    <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

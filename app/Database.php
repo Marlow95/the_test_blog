@@ -28,7 +28,7 @@ Class Database
             $this->dbname, $this->user, $this->pass);
 
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connected Sucessfully\n";
+            //echo "Connected Sucessfully\n";
 
         } catch(PDOException $e){
 

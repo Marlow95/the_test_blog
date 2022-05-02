@@ -4,7 +4,7 @@ interface DatabaseRepository
 {
     function getAll();
     function getOne($id);
-    function post();
+    //post will take in multiple different parameters
     function update($id);
     function delete($id);
 }

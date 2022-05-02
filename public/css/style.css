@@ -3,3 +3,9 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+*{background-color: aqua;}
+
+.vl{
+    border-left: 6px solid green;
+    height: 500px;
+}

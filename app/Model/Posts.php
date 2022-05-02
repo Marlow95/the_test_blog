@@ -43,7 +43,7 @@ class Posts implements DatabaseRepository
         $posts_data = $posts->fetchAll(PDO::FETCH_OBJ);
         return $posts_data;
     }
-    function post(){}
+    function post($email, $firstname, $lastname, $username, $password){}
     function update($id){}
     function delete($id){}
 }

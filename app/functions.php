@@ -83,6 +83,27 @@ function renderPostPage(){
     }
 }
 
+function signupMessage(){
+    $msg = '<h3> Account Created </h3>';
+    echo $msg;
+    header('Location: success.php');
+}
+
+function signupUsers($email, $firstname, $lastname, $username, $password){
+    global $db;
+    $users = new Users($db);
+    $post_user = $users->postUsers($email, $firstname, $lastname, $username, $password);
+    signupMessage();
+    return $post_user;
+}
+
+function loginUsers($email, $password){
+    global $db;
+    $users = new Users($db);
+    $login_user = $users->loginUsers($email, $password);
+    return $login_user;
+}
+
 /*
 
 function renderOneCategories(){
