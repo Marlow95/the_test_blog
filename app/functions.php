@@ -147,16 +147,6 @@ function renderComments(){
 
     foreach($article_comments as $post_comments){
 
-        function permissions($id){
-            if(isset($_SESSION['user_id'])){
-                if($_SESSION['user_id'] === $id){
-                    return '<a href="#" class="btn btn-success">Edit</a>' . 
-                    ' <a href="#" class="btn btn-danger">Delete</a>';
-                }
-            }
-        }
-
-        $permission_func = permissions($post_comments->user_id);
         $find_user = findUser(ucwords($post_comments->user_id));
 
         $card = <<<DELIMITER
@@ -165,12 +155,22 @@ function renderComments(){
             <div class="card-body">
                 <h5 class="card-title">$post_comments->comment_title</h5>
                 <p class="card-text">$post_comments->comment_body</p>
-                $permission_func
+        DELIMITER;
+        
+        echo $card;
+
+        if(isset($_SESSION['user_id'])){
+            if($_SESSION['user_id'] === $post_comments->user_id){
+                echo '<a href="#" class="btn btn-success">Edit</a>' . 
+                ' <a href="#" class="btn btn-danger">Delete</a>';
+            }
+        }
+
+        $card2 = <<<DELIMITER
             </div>
         </div>
         DELIMITER;
-
-        echo $card;
+        echo $card2;
 
     }
 
@@ -184,4 +184,11 @@ function findUser($find_user){
     foreach($get_user as $user){
         return $user->firstname;
     }
+}
+
+function postComments($title, $body, $created_at, $user_id, $post_id){
+    global $db;
+    $comments = new Comments($db);
+    $comment = $comments->post($title, $body, $created_at, $user_id, $post_id);
+    return $comment;
 }
