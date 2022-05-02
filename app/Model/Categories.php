@@ -41,7 +41,7 @@ class Categories implements DatabaseRepository
         $categories_data = $categories->fetchAll(PDO::FETCH_OBJ);
         return $categories_data;
     }
-    function post($email, $firstname, $lastname, $username, $password){}
+    function post(){}
     function update($id){}
     function delete($id){}
 }

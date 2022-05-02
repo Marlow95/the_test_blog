@@ -2,7 +2,15 @@
 <?php require_once(__DIR__ . "/reusables/navbar.php") ?>
 <div class="container">
     <div class="row">
-        <div class="col m-4">
+        <div class="col m-4 text-white p-4 rounded" style="background-color: #2E4172;">
+            <h1>About Us</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="btn btn-success" href="index.php">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">About</li>
+                </ol>
+            </nav>
+            <hr>
             <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum condimentum dolor ac faucibus. Integer sem odio,
             egestas vel libero non, iaculis consequat erat. Sed a neque ultricies, tincidunt elit sit amet, bibendum nibh. Aliquam dapibus 

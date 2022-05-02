@@ -1,6 +1,13 @@
 <?php require_once(__DIR__ . "/reusables/header.php") ?>
 <?php require_once(__DIR__ . "/reusables/navbar.php") ?>
-
+<?php 
+//Not a production level version for oauth. You should use $_SERVER or an depency for real authentication
+//I will add a dependency later this is just for practice...
+if (!isset($_SESSION['user_id'])) {
+    header("HTTP/1.0 401 Unauthorized");
+    print '<h1 class="m-4 text-center">Sorry - you need valid credentials to be granted access to this private area!</h1>';
+    exit;
+} else { ?>
 <div class="row">
 
     <div class="col-2 p-4">
@@ -20,9 +27,10 @@
     </div>
 
     <div class="col-10">
-        <h1 class="m-2 p-1">Hello <?php echo ucwords($_SESSION['firstname']); ?></h1>
+        <h1 class="m-2 p-1">Hello <?php echo isset($_SESSION['firstname']) ? ucwords($_SESSION['firstname']) : ''; ?></h1>
     </div>
 
 </div>
 
 <?php require_once(__DIR__ . "/reusables/footer.php") ?>
+<?php }; ?>

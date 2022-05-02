@@ -44,7 +44,7 @@
         }
 
         if(isset($_POST['logout'])){
-          header('Location: index.php');
+          header('Location: logout.php');
           session_destroy();
         }
       ?>

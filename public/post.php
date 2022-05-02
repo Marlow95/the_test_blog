@@ -5,6 +5,5 @@
 <div class="d-flex justify-content-center">
     <?php renderPostPage(); ?>
 </div>
-</div>
 
 <?php require_once(__DIR__ . "/reusables/footer.php") ?>

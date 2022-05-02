@@ -12,7 +12,7 @@ function renderPosts(){
         <div class="card m-4" style="width: 18rem;">
             <img class="card-img-top" src="https://placehold.co/250x250" alt="Card image cap">
             <div class="card-body">
-                <h3 class="card-title">$posts->post_title</h3>
+                <h3 class="card-title"><a href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a></h3>
                 <p class="card-text">$posts->post_bio</p>
                 <a class="btn btn-primary" 
                 href="article.php?id=$posts->post_id&author=$posts->user_id">Read More</a>
@@ -35,6 +35,13 @@ function renderArticle(){
         $card = <<<DELIMITER
         <article class="p-4">
             <h2>$posts->post_title</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="btn btn-outline-primary" href="post.php">Blog Posts</a></li>
+                <li class="breadcrumb-item active text-white" aria-current="page">$posts->post_title</li>
+            </ol>
+            </nav>
+            <hr>
             <p>$posts->post_body</p>
         </article>
         DELIMITER;
@@ -72,10 +79,16 @@ function renderPostPage(){
         $card = <<<DELIMITER
             <div class="card mb-3 m-4">
                 <img src="https://placehold.co/300x150/png" height="300px" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title text-center"><a href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a></h5>
+                <div class="card-body rounded text-white" style="background-color: #2E4172;">
+                <h4 class="card-title">
+                    <a class="card-title text-white text-decoration-none" 
+                    href="article.php?id=$posts->post_id&author=$posts->user_id">
+                        $posts->post_title
+                    </a>
+                </h4>
+                <hr>
                 <p class="card-text">$posts->post_bio</p>
-                <p class="card-text"><small class="text-muted">$posts->created_at</small></p>
+                <p class="card-text"><small class="text-white">$posts->created_at | Rating: $posts->post_rating</small></p>
                 </div>
             </div>
         DELIMITER;
@@ -104,17 +117,18 @@ function loginUsers($email, $password){
     return $login_user;
 }
 
-/*
 
-function renderOneCategories(){
+function renderCategories(){
     global $db;
     $blog_categories = new Categories($db);
-    $get_all_categories = $blog_categories->getOne();
+    $get_all_categories = $blog_categories->getAll();
 
     foreach($get_all_categories as $category){
 
         $tabs = <<<DELIMITER
-
+        <ul class="list-group">
+        <li class="list-group-item"><a href="category.php?id=$category->category_id">$category->category_title</a></li>
+        </ul>
         DELIMITER;
 
         echo $tabs;
@@ -122,4 +136,52 @@ function renderOneCategories(){
     }
 }
 
-*/
+
+function renderComments(){
+
+    global $db;
+    $response = $_GET['id'];
+    $filter = filter_var($response, FILTER_SANITIZE_NUMBER_INT);
+    $comments = new Comments($db);
+    $article_comments = $comments->getOne($filter);
+
+    foreach($article_comments as $post_comments){
+
+        function permissions($id){
+            if(isset($_SESSION['user_id'])){
+                if($_SESSION['user_id'] === $id){
+                    return '<a href="#" class="btn btn-success">Edit</a>' . 
+                    ' <a href="#" class="btn btn-danger">Delete</a>';
+                }
+            }
+        }
+
+        $permission_func = permissions($post_comments->user_id);
+        $find_user = findUser(ucwords($post_comments->user_id));
+
+        $card = <<<DELIMITER
+        <div class="card mb-4" style="width: 880px;">
+            <h5 class="card-header">Comment By: $find_user</h5>
+            <div class="card-body">
+                <h5 class="card-title">$post_comments->comment_title</h5>
+                <p class="card-text">$post_comments->comment_body</p>
+                $permission_func
+            </div>
+        </div>
+        DELIMITER;
+
+        echo $card;
+
+    }
+
+}
+
+function findUser($find_user){
+    global $db;
+    $users = new Users($db);
+    $get_user = $users->getOne($find_user);
+
+    foreach($get_user as $user){
+        return $user->firstname;
+    }
+}
