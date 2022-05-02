@@ -127,7 +127,7 @@ function renderCategories(){
 
         $tabs = <<<DELIMITER
         <ul class="list-group">
-        <li class="list-group-item"><a href="category.php?id=$category->category_id">$category->category_title</a></li>
+        <li class="list-group-item"><a href="category.php?category_id=$category->category_id">$category->category_title</a></li>
         </ul>
         DELIMITER;
 
@@ -156,7 +156,7 @@ function renderComments(){
                 <h5 class="card-title">$post_comments->comment_title</h5>
                 <p class="card-text">$post_comments->comment_body</p>
         DELIMITER;
-        
+
         echo $card;
 
         if(isset($_SESSION['user_id'])){
@@ -191,4 +191,35 @@ function postComments($title, $body, $created_at, $user_id, $post_id){
     $comments = new Comments($db);
     $comment = $comments->post($title, $body, $created_at, $user_id, $post_id);
     return $comment;
+}
+
+
+function categoriesThatMatchPosts($id){
+    global $db;
+    $blog_posts = new Posts($db);
+    $get_all_posts = $blog_posts->getAll();
+
+    foreach($get_all_posts as $posts){
+
+        
+        if($posts->category_id == $id){
+
+            $card = <<<DELIMITER
+            <div class="card m-4" style="width: 18rem;">
+                <img class="card-img-top" src="https://placehold.co/250x250" alt="Card image cap">
+                <div class="card-body">
+                    <h3 class="card-title"><a href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a></h3>
+                    <p class="card-text">$posts->post_bio</p>
+                    <a class="btn btn-primary" 
+                    href="article.php?id=$posts->post_id&author=$posts->user_id">Read More</a>
+                </div>
+            </div>   
+            DELIMITER;
+
+            echo $card;
+        }
+        
+    
+
+    }
 }
