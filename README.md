@@ -3,8 +3,8 @@
 This is a simple crud app I made with vanilla php to practice planning Entities, Attributes, and Normalization in Database Design. 
 Then execute this plan by applying functional and object-oriented programming.
 
-I also plan on adding some user auth then lastly updating the ui to make things look better. The purpose of this project is to practice Database Design &
-String Manipulation. Which is the most critical skill when programming the backend. Always improving your fundamentals and applying the new things you know
+I also plan on udating the ui to make things look better and adding crud fuctionality to the dashboard. The purpose of this project is to practice Database Design &
+String Manipulation. Which is one of the most critical skills when programming the backend. Always improving your fundamentals and applying the new things you know
 in better ways is a core skill for building better programs.
 
 Database Design
@@ -16,7 +16,7 @@ Attributes
 ----id
 ----firstname
 ----lastname
-----email
+----email--(unique)
 ----username
 ----password
 ----user_bio
