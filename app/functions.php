@@ -196,13 +196,14 @@ function postComments($title, $body, $created_at, $user_id, $post_id){
 
 function categoriesThatMatchPosts($id){
     global $db;
+    $filter = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
     $blog_posts = new Posts($db);
     $get_all_posts = $blog_posts->getAll();
 
     foreach($get_all_posts as $posts){
 
         
-        if($posts->category_id == $id){
+        if($posts->category_id == $filter){
 
             $card = <<<DELIMITER
             <div class="card m-4" style="width: 18rem;">
