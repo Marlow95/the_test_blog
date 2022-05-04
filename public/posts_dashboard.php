@@ -8,20 +8,21 @@ if (!isset($_SESSION['user_id'])) {
     print '<h1 class="m-4 text-center">Sorry - you need valid credentials to be granted access to this private area!</h1>';
     exit;
 } else { ?>
+
 <div class="row">
 
     <div class="col-2 p-4">
         <ul class="list-group">
-            <li class="list-group-item active" aria-current="true">Home</li>
+            <li class="list-group-item"><a href="dashboard.php">Home</a></li>
             <li class="list-group-item"><a href="profile_dashboard.php">Profile</a></li>
-            <li class="list-group-item"><a href="posts_dashboard.php">Posts</a></li>
+            <li class="list-group-item active" aria-current="true"><a class="text-white" href="posts_dashboard.php">Posts</a></li>
             <li class="list-group-item"><a href="comments_dashboard.php">Comments</a></li>
             <li class="list-group-item"><a href="settings_dashboard.php">Settings</a></li>
         </ul>
     </div>
 
     <div class="col-10">
-        <h1 class="m-2 p-1">Hello <?php echo isset($_SESSION['firstname']) ? ucwords($_SESSION['firstname']) : ''; ?></h1>
+
     </div>
 
 </div>
