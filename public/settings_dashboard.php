@@ -54,6 +54,13 @@ if (!isset($_SESSION['user_id'])) {
             </form>
         
         </div>
+        <div class="col m-4">
+            <h4>DANGER AREA- THIS IS TO DELETE YOUR ACCOUNT PERMENENTLY</h4>
+            <hr>
+            <form method="post">
+                <button type="submit" class="btn btn-danger btn-lg">Delete Account</button>
+            </form>
+        </div>
     </div>
 </div>
 
