@@ -1,11 +1,11 @@
 # the_test_blog
 
 This is a simple crud app I made with vanilla php to practice planning Entities, Attributes, and Normalization in Database Design. 
-Then execute this plan by applying functional and object-oriented programming.
+Then execute this plan by applying functional and object-oriented programming. The purpose of this project is to practice Database Design &
+String Manipulation. Which is one of the most critical skills when programming the backend. Always improving your fundamentals and applying the new things you know in better ways is a core skill for building better programs.
 
-I also plan on udating the ui to make things look better and adding crud fuctionality to the dashboard. The purpose of this project is to practice Database Design &
-String Manipulation. Which is one of the most critical skills when programming the backend. Always improving your fundamentals and applying the new things you know
-in better ways is a core skill for building better programs.
+For now the functionality I wanted to test is pretty much done with just a few more tasks to complate. Some things I might add in the future are
+an Admin Dashboard, Dynamic Post Ratings, and pagination. After I finish the Dashboad for Basic Users I will do some UI updates, unit tests, and refactoring.
 
 Database Design
 
@@ -48,3 +48,4 @@ Attributes
 Attibutes
 ----category_id
 ----category_title
+
