@@ -65,3 +65,17 @@ function postsMadeByUser(){
         } 
     }
 }
+
+function letUserUpdateTheirProfile($id, $firstname, $lastname, $email, $user_bio){
+    global $db;
+    $update_user = new Users($db);
+    $update_user_now = $update_user->update($id, $firstname, $lastname, $email, $user_bio);
+    return $update_user_now;
+}
+
+function getLoggedInUserData(){
+    global $db;
+    $user = new Users($db);
+    $get_user = $user->getOne($_SESSION['user_id']);
+    return $get_user;
+}

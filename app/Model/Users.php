@@ -106,9 +106,26 @@ class Users implements DatabaseRepository
         }
     }
 
-    function update($id)
+    function update($id, $firstname, $lastname, $email, $user_bio)
     {
+        try{
 
+            $users = $this->db->pdo->prepare(' UPDATE users SET firstname = ?, lastname = ?,
+             email = ?, user_bio = ? WHERE users.id = ?');
+            $users->bindParam(1, $firstname);
+            $users->bindParam(2, $lastname);
+            $users->bindParam(3, $email);
+            $users->bindParam(4, $user_bio);
+            $users->bindParam(5, $id);
+            $users->execute();
+    
+        } catch(Exception $e){
+            $e = "Sorry, I can't update this user";
+            echo $e;
+            exit;
+        }
+
+        $_SESSION['user_update'] = '<h3 class="p-4">User update successful.</h3>';
     }
 
     function delete($id)
