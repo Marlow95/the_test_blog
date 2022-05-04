@@ -22,9 +22,39 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 
     <div class="col-10">
+        <div class="col m-4 border">
+            <h1 class="m-4">Update Password</h1>
+            <form method="post">
+                <div class="form-group m-4 row">
+                    <label for="email_contact" class="col-sm-2 col-form-label">Current Password</label>
+                    <div class="col-sm-10">
+                    <input type="password" class="form-control" id="email_contact" name="email_contact" placeholder="Old Password">
+                    </div>
+                </div>
+                
+                <div class="form-group m-4 row">
+                    <label for="fullname_contact" class="col-sm-2 col-form-label">New Password</label>
+                    <div class="col-sm-10">
+                    <input type="password" class="form-control" id="fullname_contact" name="fullname_contact" placeholder="New Password">
+                    </div>
+                </div>
+        
+                <div class="form-group m-4 row">
+                    <label for="fullname_contact" class="col-sm-2 col-form-label">Confirm New Password</label>
+                    <div class="col-sm-10">
+                    <input type="password" class="form-control" id="fullname_contact" name="fullname_contact" placeholder="New Password">
+                    </div>
+                </div>
 
+                <div class="form-group m-4 row">
+                    <div class="col-sm-10">
+                    <button type="submit" name="submit_contact" class="btn btn-success">Update</button>
+                    </div>
+                </div>
+            </form>
+        
+        </div>
     </div>
-
 </div>
 
 <?php require_once(__DIR__ . "/reusables/footer.php") ?>

@@ -77,18 +77,20 @@ function renderPostPage(){
 
     foreach($get_all_posts as $posts){
         $card = <<<DELIMITER
-            <div class="card mb-3 m-4">
-                <img src="https://placehold.co/300x150/png" height="300px" class="card-img-top" alt="...">
-                <div class="card-body rounded text-white" style="background-color: #2E4172;">
-                <h4 class="card-title">
-                    <a class="card-title text-white text-decoration-none" 
-                    href="article.php?id=$posts->post_id&author=$posts->user_id">
-                        $posts->post_title
-                    </a>
-                </h4>
-                <hr>
-                <p class="card-text">$posts->post_bio</p>
-                <p class="card-text"><small class="text-white">$posts->created_at | Rating: $posts->post_rating</small></p>
+            <div class="col">
+                <div class="card mb-3 mt-3">
+                    <img src="https://placehold.co/300x150/png" height="300px" class="card-img-top" alt="...">
+                    <div class="card-body rounded text-white" style="background-color: #2E4172;">
+                    <h4 class="card-title">
+                        <a class="card-title text-white text-decoration-none" 
+                        href="article.php?id=$posts->post_id&author=$posts->user_id">
+                            $posts->post_title
+                        </a>
+                    </h4>
+                    <hr>
+                    <p class="card-text">$posts->post_bio</p>
+                    <p class="card-text"><small class="text-white">$posts->created_at | Rating: $posts->post_rating</small></p>
+                    </div>
                 </div>
             </div>
         DELIMITER;

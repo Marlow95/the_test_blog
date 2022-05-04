@@ -21,8 +21,8 @@ if (!isset($_SESSION['user_id'])) {
         </ul>
     </div>
 
-    <div class="col-10">
-
+    <div class="col-10 mt-4">
+        <?php commentsThatBelongToUser($_SESSION['user_id'])?>
     </div>
 
 </div>

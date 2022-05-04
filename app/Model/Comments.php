@@ -10,7 +10,21 @@ class Comments implements DatabaseRepository
         $this->db = $db;
     }
 
-    function getAll(){}
+    function getAll(){
+
+        try{
+
+            $comments = $this->db->pdo->query('SELECT * FROM comments');
+    
+        } catch(Exception $e){
+            $e = "Sorry, I can't get the comments data";
+            echo $e;
+            exit;
+        }
+    
+        $comments_data = $comments->fetchAll(PDO::FETCH_OBJ);
+        return $comments_data;
+    }
 
     function getOne($id){
 

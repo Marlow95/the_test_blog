@@ -13,3 +13,4 @@ crossorigin="anonymous">
 
 <body>
 <?php include_once('../app/functions.php');?>
+<?php include_once('../app/functions_dashboard.php'); ?>

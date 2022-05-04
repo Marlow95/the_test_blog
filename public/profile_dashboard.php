@@ -22,6 +22,44 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 
     <div class="col-10">
+        <div class="col m-4 border">
+            <h1 class="m-4">Profile</h1>
+            <form method="post">
+                <div class="form-group m-4 row">
+                    <label for="email_contact" class="col-sm-2 col-form-label">Firstname</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" id="email_contact" name="email_contact" placeholder="Firstname">
+                    </div>
+                </div>
+                
+                <div class="form-group m-4 row">
+                    <label for="fullname_contact" class="col-sm-2 col-form-label">Lastname</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" id="fullname_contact" name="fullname_contact" placeholder="Lastname">
+                    </div>
+                </div>
+        
+                <div class="form-group m-4 row">
+                    <label for="fullname_contact" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                    <input type="email" class="form-control" id="fullname_contact" name="fullname_contact" placeholder="Email">
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group m-4 row">
+                    <label for="fullname_contact" class="col-sm-2 col-form-label">User Bio</label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+
+
+                <div class="form-group m-4 row">
+                    <div class="col-sm-10">
+                    <button type="submit" name="submit_contact" class="btn btn-success">Update</button>
+                    </div>
+                </div>
+            </form>
+        
+        </div>
 
     </div>
 
