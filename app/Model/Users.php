@@ -128,6 +128,27 @@ class Users implements DatabaseRepository
         $_SESSION['user_update'] = '<h3 class="p-4">User update successful.</h3>';
     }
 
+    function updatePassword($new_password, $confirm_new_password)
+    {
+        if($new_password === $confirm_new_password){
+            try{
+                $hash = password_hash($new_password, PASSWORD_BCRYPT);
+                $users = $this->db->pdo->prepare('UPDATE users SET password = ? WHERE users.id = ?');
+                $users->bindParam(1, $hash);
+                $users->bindParam(2, $_SESSION['user_id']);
+                $users->execute();
+        
+            } catch(Exception $e){
+                $e = "Sorry, I can't update this user";
+                echo $e;
+                exit;
+            }
+
+            $_SESSION['user_update_password'] = 'Password sucessfully updated.';
+        }
+
+    }
+
     function delete($id, $user_id)
     {
         try{

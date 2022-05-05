@@ -27,33 +27,45 @@ if (!isset($_SESSION['user_id'])) {
                 <h1 class="m-4">Update Password</h1>
                 <form method="post">
                     <div class="form-group m-4 row">
-                        <label for="email_contact" class="col-sm-2 col-form-label">Current Password</label>
+                        <label for="old_password" class="col-sm-2 col-form-label">Current Password</label>
                         <div class="col-sm-10">
-                        <input type="password" class="form-control" id="email_contact" name="email_contact" placeholder="Old Password">
+                        <input type="text" class="form-control" id="old_password" name="old_password" placeholder="Old Password">
                         </div>
                     </div>
                     
                     <div class="form-group m-4 row">
-                        <label for="fullname_contact" class="col-sm-2 col-form-label">New Password</label>
+                        <label for="new_password" class="col-sm-2 col-form-label">New Password</label>
                         <div class="col-sm-10">
-                        <input type="password" class="form-control" id="fullname_contact" name="fullname_contact" placeholder="New Password">
+                        <input type="password" class="form-control" id="new_password" name="new_password" placeholder="New Password">
                         </div>
                     </div>
             
                     <div class="form-group m-4 row">
-                        <label for="fullname_contact" class="col-sm-2 col-form-label">Confirm New Password</label>
+                        <label for="new_confirm_password" class="col-sm-2 col-form-label">Confirm New Password</label>
                         <div class="col-sm-10">
-                        <input type="password" class="form-control" id="fullname_contact" name="fullname_contact" placeholder="New Password">
+                        <input type="password" class="form-control" id="new_confirm_password" name="new_confirm_password" placeholder="Confirm New Password">
                         </div>
                     </div>
 
                     <div class="form-group m-4 row">
                         <div class="col-sm-10">
-                        <button type="submit" name="submit_contact" class="btn btn-success">Update</button>
+                        <button type="password" name="submit_new_pass" class="btn btn-success">Update</button>
                         </div>
                     </div>
                 </form>
-            
+                <?php 
+                
+                    if(isset($_POST['submit_new_pass'])){
+                       header('Location: settings_dashboard.php');
+                       updateThisUsersPassword(htmlspecialchars($_POST['old_password']), htmlspecialchars($_POST['new_password']), htmlspecialchars($_POST['new_confirm_password']));
+                       exit;
+                    }
+
+                    if(isset($_SESSION['user_update_password'])){
+                        echo '<h4>' . $_SESSION['user_update_password'] . '</h4>';
+                        unset($_SESSION['user_update_password']);
+                    }
+                ?>
             </div>
             <div class="col m-4">
                 <h4>DANGER AREA- THIS IS TO DELETE YOUR ACCOUNT PERMENENTLY</h4>

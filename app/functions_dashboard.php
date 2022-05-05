@@ -190,6 +190,19 @@ function updateThisUsersComment($comment_title, $comment_body, $comment_id, $use
     return $update_comment;
 }
 
+function updateThisUsersPassword($old_password, $new_password, $confirm_new_password){
+    global $db;
+    $user = new Users($db);
+    $update_user_pass = $user->getOne($_SESSION['user_id']);
+    foreach($update_user_pass as $users){
+        if(password_verify($old_password, $users->password)){
+            return $user->updatePassword($new_password, $confirm_new_password);
+        } 
+        
+    }
+
+}
+
 function deleteSelectedBlogPost($id, $user_id){
     global $db;
     $post = new Posts($db);
