@@ -63,6 +63,41 @@ class Comments implements DatabaseRepository
             exit;
         }
     }
-    function update($id){}
-    function delete($id, $user_id){}
+    function update($comment_title, $comment_body, $comment_id, $user_id){
+        try{
+            $comments = $this->db->pdo->prepare('UPDATE comments SET comment_title = ?, comment_body = ? WHERE comment_id = ? AND user_id = ?');
+            $comments->bindParam(1, $comment_title);
+            $comments->bindParam(2, $comment_body);
+            $comments->bindParam(3, $comment_id);
+            $comments->bindParam(4, $user_id);
+            $comments->execute();
+    
+        } catch(Exception $e){
+            $e = "Sorry, I can't get the comments data";
+            echo $e;
+            exit;
+        }
+
+        $_SESSION['update_comment_success'] = "You have successfully updated your comment";
+        $comments_data = $comments->fetchAll(PDO::FETCH_OBJ);
+        return $comments_data;
+    }
+
+    function delete($id, $user_id){
+        try{
+            $comments = $this->db->pdo->prepare('DELETE FROM comments WHERE comment_id = ? AND user_id = ?');
+            $comments->bindParam(1, $id);
+            $comments->bindParam(2, $user_id);
+            $comments->execute();
+    
+        } catch(Exception $e){
+            $e = "Sorry, I can't delete the comments data";
+            echo $e;
+            exit;
+        }
+
+        $_SESSION['delete_comment_success'] = "You have successfully deleted your comment";
+        $comments_data = $comments->fetchAll(PDO::FETCH_OBJ);
+        return $comments_data;
+    }
 }

@@ -23,7 +23,26 @@ if (!isset($_SESSION['user_id'])) {
         </div>
 
         <div class="col-10 mt-4">
-            <h1>Comments You've Made</h1>
+            <h1 class="m-4">Comments You've Made</h1>
+            <?php 
+                if(isset($_POST['edit_comment_submit'])){
+                    updateThisUsersComment(htmlspecialchars($_POST['edit_title_comment']), htmlspecialchars($_POST['edit_body_comment']), 
+                    $_POST['edit_comment_id'], $_SESSION['user_id']);
+                }
+            ?>
+            <?php 
+                if(isset($_SESSION['update_comment_success'])){
+                    echo '<h3>' . $_SESSION['update_comment_success'] . '</h3>';
+                    unset($_SESSION['update_comment_success']);
+                }
+            ?>
+            <?php 
+                if(isset($_SESSION['delete_comment_success'])){
+                    echo '<h3>' . $_SESSION['delete_comment_success'] . '</h3>';
+                    unset($_SESSION['delete_comment_success']);
+                }
+            ?>
+            <hr>
             <?php commentsThatBelongToUser($_SESSION['user_id'])?>
         </div>
 

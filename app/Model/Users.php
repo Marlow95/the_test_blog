@@ -130,6 +130,17 @@ class Users implements DatabaseRepository
 
     function delete($id, $user_id)
     {
+        try{
+
+            $users = $this->db->pdo->prepare('DELETE FROM users WHERE users.id = ?');
+            $users->bindParam(1, $user_id);
+            $users->execute();
+    
+        } catch(Exception $e){
+            $e = "Sorry, I can't get this user";
+            echo $e;
+            exit;
+        }
 
     }
 }

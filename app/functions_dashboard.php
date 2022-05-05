@@ -18,8 +18,8 @@ function commentsThatBelongToUser($id){
                 <div class="card-body">
                     <h5 class="card-title">$comments->comment_title</h5>
                     <p class="card-text">$comments->comment_body</p>
-                    <a class="btn btn-success" data-toggle="modal" data-target="#editCommentModal$comments->comment_id">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <a href="#" class="btn btn-success" data-toggle="modal" data-target="#editCommentModal$comments->comment_id">Edit</a>
+                    <a href="delete_comment.php?delete_comment_id=$comments->comment_id&delete_comment_user_id=$comments->user_id" class="btn btn-danger">Delete</a>
 
                     <div class="modal fade" id="editCommentModal$comments->comment_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -33,16 +33,23 @@ function commentsThatBelongToUser($id){
                         <div class="modal-body">
                             <form method="post">
                                 <div class="form-group m-4">
-                                    <label for="title_comment" class="col-sm-2 col-form-label">Title</label>
+                                    <label hidden for="edit_comment_id" class="col-sm-2 col-form-label">ID</label>
+                                    <div class="col-sm-10">
+                                    <input hidden type="text" class="form-control" id="edit_comment_id" name="edit_comment_id" 
+                                    value="$comments->comment_id" placeholder="ID">
+                                    </div>
+                                </div>
+                                <div class="form-group m-4">
+                                    <label for="edit_title_comment" class="col-sm-2 col-form-label">Title</label>
                                     <br>
                                     <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="title_comment" name="title_comment" 
+                                    <input type="text" class="form-control" id="edit_title_comment" name="edit_title_comment" 
                                     value="$comments->comment_title" placeholder="Title">
                                     </div>
                                 </div>
                                 <span class="m-4 text-muted">Your comment message</span>
                                 <div class="form-group m-4 row">
-                                    <textarea name="edit_comment_body" id="edit_comment_body" cols="30" rows="10">$comments->comment_body</textarea>
+                                    <textarea name="edit_body_comment" id="edit_body_comment" cols="30" rows="10">$comments->comment_body</textarea>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -59,9 +66,6 @@ function commentsThatBelongToUser($id){
 
             echo $card;
         }
-        
-    
-
     }
 }
 
@@ -154,6 +158,7 @@ function postsMadeByUser(){
 
             echo $curr_posts;
         } 
+    
     }
 }
 
@@ -178,9 +183,30 @@ function updateThisUsersBlogPost($id, $post_title, $post_bio, $post_body, $categ
     return $update_post;
 }
 
+function updateThisUsersComment($comment_title, $comment_body, $comment_id, $user_id){
+    global $db;
+    $comment = new Comments($db);
+    $update_comment = $comment->update($comment_title, $comment_body, $comment_id, $user_id);
+    return $update_comment;
+}
+
 function deleteSelectedBlogPost($id, $user_id){
     global $db;
     $post = new Posts($db);
     $delete_post = $post->delete($id, $user_id);
     return $delete_post;
+}
+
+function deleteSelectedComment($id, $user_id){
+    global $db;
+    $comment = new Comments($db);
+    $delete_comment = $comment->delete($id, $user_id);
+    return $delete_comment;
+}
+
+function deleteAccountPermenantly($id, $user_id){
+    global $db;
+    $user = new Users($db);
+    $delete_user = $user->delete($id, $user_id);
+    return $delete_user;
 }

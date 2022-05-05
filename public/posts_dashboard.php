@@ -30,6 +30,7 @@ if (!isset($_SESSION['user_id'])) {
             <div class="row row-col-2">
                 <div class="col">
                     <h1 class="mt-4">Your Current Blog Posts</h1>
+                    <hr>
                     <?php 
                         postsMadeByUser();
 

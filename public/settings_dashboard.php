@@ -59,8 +59,13 @@ if (!isset($_SESSION['user_id'])) {
                 <h4>DANGER AREA- THIS IS TO DELETE YOUR ACCOUNT PERMENENTLY</h4>
                 <hr>
                 <form method="post">
-                    <button type="submit" class="btn btn-danger btn-lg">Delete Account</button>
+                    <button type="submit" name="delete_account" class="btn btn-danger btn-lg">Delete Account</button>
                 </form>
+                <?php 
+                    if(isset($_POST['delete_account'])){
+                        header('location: delete_account.php');
+                    }
+                ?>
             </div>
         </div>
     </div>
