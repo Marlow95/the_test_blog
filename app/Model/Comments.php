@@ -64,5 +64,5 @@ class Comments implements DatabaseRepository
         }
     }
     function update($id){}
-    function delete($id){}
+    function delete($id, $user_id){}
 }

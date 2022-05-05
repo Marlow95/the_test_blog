@@ -43,5 +43,5 @@ class Categories implements DatabaseRepository
     }
     function post(){}
     function update($id){}
-    function delete($id){}
+    function delete($id, $user_id){}
 }

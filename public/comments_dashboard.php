@@ -9,24 +9,26 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 } else { ?>
 
-<div class="row">
+<div class="container m-4">
+    <div class="row">
 
-    <div class="col-2 p-4">
-        <ul class="list-group">
-            <li class="list-group-item"><a href="dashboard.php">Home</a></li>
-            <li class="list-group-item"><a href="profile_dashboard.php">Profile</a></li>
-            <li class="list-group-item"><a href="posts_dashboard.php">Posts</a></li>
-            <li class="list-group-item active" aria-current="true"><a class="text-white" href="comments_dashboard.php">Comments</a></li>
-            <li class="list-group-item"><a href="settings_dashboard.php">Settings</a></li>
-        </ul>
+        <div class="col-2 p-4">
+            <ul class="list-group">
+                <li class="list-group-item"><a href="dashboard.php">Home</a></li>
+                <li class="list-group-item"><a href="profile_dashboard.php">Profile</a></li>
+                <li class="list-group-item"><a href="posts_dashboard.php">Posts</a></li>
+                <li class="list-group-item active" aria-current="true"><a class="text-white" href="comments_dashboard.php">Comments</a></li>
+                <li class="list-group-item"><a href="settings_dashboard.php">Settings</a></li>
+            </ul>
+        </div>
+
+        <div class="col-10 mt-4">
+            <h1>Comments You've Made</h1>
+            <?php commentsThatBelongToUser($_SESSION['user_id'])?>
+        </div>
+
     </div>
 
-    <div class="col-10 mt-4">
-        <h1>Comments You've Made</h1>
-        <?php commentsThatBelongToUser($_SESSION['user_id'])?>
-    </div>
-
+    <?php require_once(__DIR__ . "/reusables/footer.php") ?>
+    <?php }; ?>
 </div>
-
-<?php require_once(__DIR__ . "/reusables/footer.php") ?>
-<?php }; ?>

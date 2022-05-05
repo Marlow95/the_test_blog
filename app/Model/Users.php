@@ -128,7 +128,7 @@ class Users implements DatabaseRepository
         $_SESSION['user_update'] = '<h3 class="p-4">User update successful.</h3>';
     }
 
-    function delete($id)
+    function delete($id, $user_id)
     {
 
     }

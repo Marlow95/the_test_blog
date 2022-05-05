@@ -17,7 +17,7 @@ class Posts implements DatabaseRepository
         $posts = $this->db->pdo->query('SELECT * FROM posts');
 
         } catch(Exception $e){
-            $e = "Sorry, I can't get the users data";
+            $e = "Sorry, I can't get the posts data";
             echo $e;
             exit;
         }
@@ -35,7 +35,7 @@ class Posts implements DatabaseRepository
         $posts->execute();
 
         } catch(Exception $e){
-            $e = "Sorry, I can't get the users data";
+            $e = "Sorry, I can't get the posts data";
             echo $e;
             exit;
         }
@@ -75,6 +75,47 @@ class Posts implements DatabaseRepository
         return $posts_data;
     }
 
-    function update($id){}
-    function delete($id){}
+    function update($id, $post_title, $post_bio, $post_body, $category_id, $post_id){
+        try{
+
+            $posts = $this->db->pdo->prepare('UPDATE posts SET post_title = ?, post_bio = ?, 
+            post_body = ?, category_id  = ? WHERE user_id = ? AND post_id = ?');
+            $posts->bindParam(1, $post_title);
+            $posts->bindParam(2, $post_bio);
+            $posts->bindParam(3, $post_body);
+            $posts->bindParam(4, $category_id);
+            $posts->bindParam(5, $id);
+            $posts->bindParam(6, $post_id);
+            $posts->execute();
+    
+        } catch(Exception $e){
+            $e = "Sorry, I can't update the posts data";
+            echo $e;
+            exit;
+        }
+
+        $_SESSION['post_updated_success'] ='Your post has been sucessfully updated';
+        $posts_data = $posts->fetchAll(PDO::FETCH_OBJ);
+        return $posts_data;
+    }
+
+    function delete($id, $user_id){
+        try{
+
+            $posts = $this->db->pdo->prepare('DELETE FROM posts WHERE post_id = ? AND user_id = ?');
+            $posts->bindParam(1, $id);
+            $posts->bindParam(2, $user_id);
+            $posts->execute();
+    
+        } catch(Exception $e){
+            $e = "Sorry, I can't delete this post";
+            echo $e;
+            exit;
+        }
+
+
+        $_SESSION['post_deleted_success'] ='Your post has been sucessfully deleted';
+        $posts_data = $posts->fetchAll(PDO::FETCH_OBJ);
+        return $posts_data;
+    }
 }
