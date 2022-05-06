@@ -3,7 +3,7 @@
 
 <div class="d-flex justify-content-center text-center">
   <div class="jumbotron justify-content-center">
-    <h1 class="display-4">Hello, world!</h1>
+    <h1 class="display-4">Hello, <?php echo isset($_SESSION['firstname']) ? ucwords($_SESSION['firstname']) : 'Guest' ?></h1>
     <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
     <hr class="my-4">
     <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -18,7 +18,7 @@
 <div class="m-2">
  <h2 class="p-3">Recent Posts</h2>
  <div class="container m-0">
-    <div class="d-flex flex-wrap">
+    <div class="row row-col-5">
       <?php renderPosts(); ?>
     </div>
   </div>

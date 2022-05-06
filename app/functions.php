@@ -9,13 +9,15 @@ function renderPosts(){
 
     foreach($get_all_posts as $posts){
         $card = <<<DELIMITER
-        <div class="card m-4" style="width: 18rem;">
-            <img class="card-img-top" src="https://placehold.co/250x250" alt="Card image cap">
-            <div class="card-body">
-                <h3 class="card-title"><a href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a></h3>
-                <p class="card-text">$posts->post_bio</p>
-                <a class="btn btn-primary" 
-                href="article.php?id=$posts->post_id&author=$posts->user_id">Read More</a>
+        <div class="col">
+            <div class="card m-4" style="width: 18rem;">
+                <img class="card-img-top" src="https://placehold.co/250x250" alt="Card image cap">
+                <div class="card-body">
+                    <h3 class="card-title"><a href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a></h3>
+                    <p class="card-text">$posts->post_bio</p>
+                    <a class="btn btn-primary" 
+                    href="article.php?id=$posts->post_id&author=$posts->user_id">Read More</a>
+                </div>
             </div>
         </div>   
         DELIMITER;
@@ -208,15 +210,17 @@ function categoriesThatMatchPosts($id){
         if($posts->category_id == $filter){
 
             $card = <<<DELIMITER
-            <div class="card m-4" style="width: 18rem;">
-                <img class="card-img-top" src="https://placehold.co/250x250" alt="Card image cap">
-                <div class="card-body">
-                    <h3 class="card-title"><a href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a></h3>
-                    <p class="card-text">$posts->post_bio</p>
-                    <a class="btn btn-primary" 
-                    href="article.php?id=$posts->post_id&author=$posts->user_id">Read More</a>
-                </div>
-            </div>   
+            <div class="col-3">
+                <div class="card mt-4" style="width: 18rem;">
+                    <img class="card-img-top" src="https://placehold.co/250x250" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title"><a href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a></h3>
+                        <p class="card-text">$posts->post_bio</p>
+                        <a class="btn btn-primary" 
+                        href="article.php?id=$posts->post_id&author=$posts->user_id">Read More</a>
+                    </div>
+                </div>  
+            </div> 
             DELIMITER;
 
             echo $card;
@@ -224,5 +228,20 @@ function categoriesThatMatchPosts($id){
         
     
 
+    }
+}
+
+function search($search){
+    global $db;
+    $blog_posts = new Posts($db);
+    $search_posts = $blog_posts->search($search);
+
+    foreach($search_posts as $posts){
+        $results = <<<DELIMITER
+        <ul class="list-group">
+        <a class="list-group-item" href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a>
+        </ul>
+        DELIMITER;
+        echo $results;
     }
 }

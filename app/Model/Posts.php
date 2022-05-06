@@ -26,6 +26,24 @@ class Posts implements DatabaseRepository
         return $posts_data;
     }
 
+    function search($search){
+        try{
+
+        $posts = $this->db->pdo->prepare('SELECT * FROM posts 
+        WHERE post_title LIKE ?');
+        $posts->bindValue(1, "%$search%", PDO::PARAM_STR);
+        $posts->execute();
+
+        } catch(Exception $e){
+            $e = "Oops, something went wrong.";
+            echo $e;
+            exit;
+        }
+
+        $posts_data = $posts->fetchAll(PDO::FETCH_OBJ);
+        return $posts_data;
+    }
+
     function getOne($id)
     {
         try{
