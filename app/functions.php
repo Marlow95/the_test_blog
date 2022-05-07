@@ -239,7 +239,7 @@ function search($search){
     foreach($search_posts as $posts){
         $results = <<<DELIMITER
         <ul class="list-group">
-        <a class="list-group-item" href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a>
+            <a class="list-group-item" href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a>
         </ul>
         DELIMITER;
         echo $results;

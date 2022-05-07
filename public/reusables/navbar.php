@@ -1,9 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary text-white">
+<nav class="navbar navbar-expand-lg navbar-dark text-white border-bottom border-light" style="background-color: #2E4172;">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand m-1" href="index.php">The Test Blog</a>
-
+  <a class="navbar-brand m-1" href="index.php">Marlow Collins DotCom</a>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
@@ -18,7 +17,7 @@
         <a class="nav-link" href="about.php">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="post.php">Post</a>
+        <a class="nav-link" href="post.php">Blog</a>
       </li>
       <?php 
       //users can still visit dashboard by typing in the url fix later
@@ -26,7 +25,7 @@
          echo '';
       } else{ ?>
       <li class="nav-item">
-        <a class="nav-link" href="login.php">Login</a>
+        <a class="nav-link" href="login.php">Login/Sign Up</a>
       </li>
       <?php } ?>
       <li class="nav-item">
@@ -53,7 +52,7 @@
       </li>
     </ul>
   
-    <form method="post" class="form-inline my-2 my-lg-0">
+    <form method="post" class="form-inline my-2 my-lg-0  row-col align-self-end">
         <input class="form-control-inline form-control-lg mr-sm-2" type="search" name="lookup" placeholder="Search" aria-label="Search">
         <button class="btn btn-lg btn-outline-light my-2 my-sm-0" name="submit_search" type="submit">Search</button>
     </form>

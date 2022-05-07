@@ -1,7 +1,7 @@
 <?php require_once(__DIR__ . "/reusables/header.php") ?>
 <?php require_once(__DIR__ . "/reusables/navbar.php") ?>
 
-<div class="d-flex justify-content-center text-center">
+<div class="d-flex justify-content-center text-center text-white" style="background-color: #2E4172;">
   <div class="jumbotron justify-content-center">
     <h1 class="display-4">Hello, <?php echo isset($_SESSION['firstname']) ? ucwords($_SESSION['firstname']) : 'Guest' ?></h1>
     <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>

@@ -7,6 +7,8 @@ session_start();
 require_once(__DIR__ . '/Database.php');
 //Imports ENV Variables
 require_once('../get_env.php');
+//Tmports PHPMail 
+require_once('../mail.php');
 
 //Autoload Models
 spl_autoload_register(fn($class)=> require_once('Model/'. $class . '.php'));
