@@ -28,11 +28,12 @@
                         </div>
                     </div>
                     <div class="form-group m-3 row">
-                        <!--Sidebar breaking problem--->
                         <div class="col-sm-10">
-                        <button type="submit" name="newsletter_submit" class="btn text-white" style="background-color: #68A075;">Sign Up</button>
+                        <button type="submit" name="newsletter_submit" class="btn btn-lg text-white" style="background-color: #68A075;">
+                            Sign Up
+                        </button>
+                        </div>
                     </div>
-                </div>
                 </form>
             </div>
 
