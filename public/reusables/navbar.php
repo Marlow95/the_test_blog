@@ -1,10 +1,17 @@
-<nav class="navbar navbar-expand-lg navbar-dark text-white border-bottom border-light" style="background-color: #2E4172;">
+<nav class="navbar-bg navbar-style navbar navbar-expand-lg navbar-dark border-bottom border-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand m-1" href="index.php">Marlow Collins DotCom</a>
+  <a class="navbar-brand p-4" href="index.php"><img src="./img/Logo.png"></a>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+    <form method="post" class="form-inline my-2 my-lg-0  row-col align-self-end">
+        <input class="search-input form-control-inline form-control-lg mr-sm-2" type="search" name="lookup" placeholder="Search" aria-label="Search">
+        <button class="search-btn btn btn-lg my-2 my-sm-0" name="submit_search" type="submit"><img src="./img/Search.png" height="34px"></button>
+    </form>
+
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 nav-position">
+
       <li class="nav-item active">
         <?php
         if(isset($_SESSION['is_logged_in'])){ ?>
@@ -51,11 +58,6 @@
         <a class="nav-link enabled" href="#"></a>
       </li>
     </ul>
-  
-    <form method="post" class="form-inline my-2 my-lg-0  row-col align-self-end">
-        <input class="form-control-inline form-control-lg mr-sm-2" type="search" name="lookup" placeholder="Search" aria-label="Search">
-        <button class="btn btn-lg btn-outline-light my-2 my-sm-0" name="submit_search" type="submit">Search</button>
-    </form>
   </div>
 </nav>
 

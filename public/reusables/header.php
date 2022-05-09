@@ -2,7 +2,7 @@
 <html lang="en">
 <meta charset="UTF-8">
 <title>
-    <?php const TITLE = 'Marlow Collins DotCom'; ?>
+    <?php const TITLE = 'The Test Blog DotCom'; ?>
     <?= TITLE ?>
 </title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,7 +10,7 @@
 rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
 crossorigin="anonymous">
 
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="./css/styles.css">
 
 <body>
 <?php include_once('../app/functions.php');?>

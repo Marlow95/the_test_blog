@@ -1,24 +1,31 @@
 <?php require_once(__DIR__ . "/reusables/header.php") ?>
 <?php require_once(__DIR__ . "/reusables/navbar.php") ?>
 
-<div class="d-flex justify-content-center text-center text-white" style="background-color: #2E4172;">
-  <div class="jumbotron justify-content-center">
-    <h1 class="display-4">Hello, <?php echo isset($_SESSION['firstname']) ? ucwords($_SESSION['firstname']) : 'Guest' ?></h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="post.php" role="button">Learn more</a>
-    </p>
-  </div>
+<div class="jumbo">
+  <h1 class="p-4 text-center greet"><?= ucwords('Hello, Friend') ?></h1>
+</div>
+<div class="cta m-4 p-4 text-center">
+  <p>
+    This is your new your community 
+    of like-minded peers to help you reach or exceed your digital marketing goals.
+  </p>
+  <p>
+  Please feel free to browse through our blog posts and comment on any posts you may like. 
+  </p>
+  <p>
+    You can also sign up for our newsletter so that 
+    you can join our elite and private facebook group of suceessful professionals.
+  </p>
+
+  <a class="btn btn-lg cta-btn m-4 p-4" href="http://">JOIN OUR ELITE COMMUNITY</a>
 </div>
 
 <hr/>
 
 <div class="m-2">
- <h2 class="p-3">Recent Posts</h2>
- <div class="container m-0">
-    <div class="row row-col-5">
+ <h2 class="p-4 posts-header">Recent Blog Posts</h2>
+ <div class="posts">
+    <div class="row row-col-4 m-2">
       <?php renderPosts(); ?>
     </div>
   </div>

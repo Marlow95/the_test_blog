@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+*{}
+:root {
+    --mainFont: Work Sans;
+    --secondaryFont: Itim;
+    --mainBlue: #2E4172;
+    --secondaryBlue: #3F5AA0;
+    --mainGreen: #A7D7B2;
+    --white: white;
+    --ctaColor: #F78989;
+}
+
+.navbar-bg{
+    background-color: var(--mainBlue);
+}
+
+.navbar-style {
+    font-family: var(--mainFont);
+    font-weight: bold;
+}
+
+
+.nav-link:hover{
+    background-color: var(--white);
+    border-radius: 10px;
+}
+.search-input {
+    width: 50rem;
+}
+.search-btn {
+    position: relative;
+    bottom: 2px;
+    right: 9px;
+    background-color: var(--mainGreen);
+    width: 140px;
+}
+
+.search-btn img {
+    float: right;
+}
+
+.nav-position{
+    position: relative;
+    left: 5rem;
+    text-transform: uppercase;
+}
+
+.jumbo{
+    background-color: var(--mainGreen);
+    height: 20rem;
+}
+
+.greet{
+    font-family: var(--secondaryFont);
+    color: var(--white);
+    font-size: 5rem;
+}
+
+.cta{
+    font-family: var(--secondaryFont);
+    color: var(--mainBlue);
+    font-size: 1.5rem;
+}
+
+.cta-btn{
+    background-color: var(--mainBlue);
+    color: var(--white);
+}
+
+.cta-btn:hover{
+    background-color: var(--ctaColor)
+}
+
+.posts{
+    background-color: var(--secondaryBlue);
+    display: flex;
+    justify-content: center;
+}
+
+.posts-header{
+    background-color: var(--mainGreen);
+    border-radius: 10px;
+    color: var(--white);
+    width: 25rem;
+    text-transform: uppercase;
+    z-index: 1;
+    position: relative;
+    top: 3rem;
+    left: 3rem;
+}
