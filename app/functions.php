@@ -10,7 +10,7 @@ function renderPosts(){
     foreach($get_all_posts as $posts){
         $card = <<<DELIMITER
         <div class="col-3 mt-4 p-4">
-            <div class="card m-3" style="width: 18rem;">
+            <div class="front-card card m-3">
                 <img class="card-img-top" src="https://placehold.co/250x250" alt="Card image cap">
                 <div class="card-body">
                     <h3 class="card-title"><a href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a></h3>
@@ -82,16 +82,20 @@ function renderPostPage(){
             <div class="col">
                 <div class="card mb-3 mt-3">
                     <img src="https://placehold.co/300x150/png" height="300px" class="card-img-top" alt="...">
-                    <div class="card-body rounded text-white" style="background-color: #2E4172;">
+                    <div class="card-body rounded text-white" style="background-color:#3F5AA0;">
                     <h4 class="card-title">
-                        <a class="card-title text-white text-decoration-none" 
+                        <a class="card-title text-white" 
                         href="article.php?id=$posts->post_id&author=$posts->user_id">
                             $posts->post_title
                         </a>
                     </h4>
                     <hr>
                     <p class="card-text">$posts->post_bio</p>
-                    <p class="card-text"><small class="text-white">$posts->created_at | Rating: $posts->post_rating</small></p>
+                    <p class="card-text">
+                    <small class="text-white">
+                        <img src="../public/img/rating.png" alt="star"> <strong><em>Ratings: $posts->post_rating | $posts->created_at</em></strong>
+                    </small>
+                    </p>
                     </div>
                 </div>
             </div>

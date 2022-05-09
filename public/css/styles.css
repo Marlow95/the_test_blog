@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
-*{}
+
 :root {
     --mainFont: Work Sans;
     --secondaryFont: Itim;
@@ -88,4 +88,14 @@
     position: relative;
     top: 3rem;
     left: 3rem;
+}
+
+.footer{
+    font-family: var(--mainFont);
+}
+
+.front-card{
+    width: 18rem;
+    height: 40rem;
+    overflow: scroll;
 }

@@ -2,12 +2,12 @@
 <?php require_once(__DIR__ . "/reusables/navbar.php") ?>
 <div class="container">
     <div class="row">
-        <div class="col m-4 text-white p-4 rounded" style="background-color: #2E4172;">
-            <h1>About Us</h1>
+        <div class="col m-4 p-4 rounded">
+            <h1 class="text-center">ABOUT ME</h1>
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a class="btn btn-success" href="index.php">Home</a></li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">About</li>
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a class="text-decoration-none" href="index.php">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">About</li>
                 </ol>
             </nav>
             <hr>
