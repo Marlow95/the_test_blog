@@ -22,7 +22,7 @@
 
 
 .nav-link:hover{
-    background-color: var(--white);
+    background-color: var(--ctaColor);
     border-radius: 10px;
 }
 .search-input {
