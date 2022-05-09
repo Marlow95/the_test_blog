@@ -11,10 +11,26 @@
     --ctaColor: #F78989;
 }
 
+.article-page{
+    font-family: var(--mainFont);
+}
+
 .contact{
     background-color: var(--mainGreen);
 }
 
 .contact-btn{
     background-color: var(--mainGreen);
+}
+
+.signup-sidebar{
+    background-color: var(--mainBlue);
+    color: var(--white);
+    border-radius: 10px;
+}
+
+.categories-sidebar{
+    background-color: var(--secondaryBlue);
+    border-radius: 10px;
+    font-family: var(--mainFont);
 }

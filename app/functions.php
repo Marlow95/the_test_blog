@@ -40,7 +40,7 @@ function renderArticle(){
             <hr>
             <nav aria-label="breadcrumb">
                 <div class="justify-content-start">
-                    <em><img src="../public/img/rating.png"> Rating $posts->post_rating</em>
+                    <em><img src="../public/img/rating.png"> Rating: $posts->post_rating</em>
                 </div>
                 <em>
                 <ol class="breadcrumb justify-content-end" style="position: relative; bottom: 2.3em;">
@@ -67,8 +67,8 @@ function articleAuthor(){
     foreach($article_author as $author){
         $card = <<<DELIMITER
         <div class="p-4">
-            <h2>Author of This Post</h2>
-            <p>$author->firstname $author->lastname</p>
+            <h2 class="text-center">Author of This Post</h2>
+            <p class="text-center">$author->firstname $author->lastname</p>
         </div>
         DELIMITER;
         echo ucwords($card);
@@ -139,7 +139,11 @@ function renderCategories(){
 
         $tabs = <<<DELIMITER
         <ul class="list-group">
-        <li class="list-group-item"><a href="category.php?category_id=$category->category_id">$category->category_title</a></li>
+            <li class="list-group-item">
+                <a class="text-decoration-none" href="category.php?category_id=$category->category_id">
+                    $category->category_title
+                </a>
+            </li>
         </ul>
         DELIMITER;
 

@@ -1,6 +1,6 @@
 <?php require_once(__DIR__ . "/reusables/header.php") ?>
 <?php require_once(__DIR__ . "/reusables/navbar.php") ?>
-<div class="container">
+<div class="container article-page">
     <div class="row">
         <div class="col-8">
             <div class="mt-4 p-4 rounded">
@@ -9,10 +9,41 @@
         </div>
 
         <div class="col-4 mt-4">
-            <h2>Categories</h2>
-            <?php renderCategories(); ?>
+
+            <div class="m-4 p-4 signup-sidebar">
+                <h2 class="text-center">JOIN OUR <span style="color:#F78989">SENSATIONAL</span> COMMUNITY</h2>
+                <form method="post">
+                    <div class="form-group m-3 row">
+                        <label for="newsletter_email" class="col-sm-2 col-form-label">Email</label>
+                        <br>
+                        <div class="col-sm-10">
+                        <input type="email" class="form-control" id="newsletter_email" name="newsletter_email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group m-3 row">
+                        <label for="newsletter_fullname" class="col-sm-2 col-form-label">Fullname</label>
+                        <br>
+                        <div class="col-sm-10">
+                        <input type="fullname" class="form-control" id="newsletter_fullname" name="newsletter_fullname" placeholder="Fullname">
+                        </div>
+                    </div>
+                    <div class="form-group m-3 row">
+                        <!--Sidebar breaking problem--->
+                        <div class="col-sm-10">
+                        <button type="submit" name="newsletter_submit" class="btn text-white" style="background-color: #68A075;">Sign Up</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+
+            <div class="categories-sidebar m-4 p-4 text-white">
+                <h2 class="text-center">Categories</h2>
+                <?php renderCategories(); ?>
+            </div>
             <?php articleAuthor(); ?>
+
         </div>
+
         <?php
             $title_comment = isset($_POST['title_comment']) ? htmlspecialchars($_POST['title_comment']) : '';
             $message = isset($_POST['message']) ? htmlspecialchars($_POST['message']) : '';
