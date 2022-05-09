@@ -56,11 +56,15 @@
     color: var(--white);
     font-size: 5rem;
 }
-
+/*Call to Action*/
 .cta{
     font-family: var(--secondaryFont);
     color: var(--mainBlue);
     font-size: 1.5rem;
+}
+
+.cta-words{
+    color: var(--ctaColor);
 }
 
 .cta-btn{
@@ -93,9 +97,7 @@
 .footer{
     font-family: var(--mainFont);
 }
-
+/*Styles for the render card functions styling*/
 .front-card{
     width: 18rem;
-    height: 40rem;
-    overflow: scroll;
 }

@@ -12,6 +12,7 @@ crossorigin="anonymous">
 
 <link rel="stylesheet" href="./css/styles.css">
 <link rel="stylesheet" href="./css/article.css">
+<link rel="stylesheet" href="./css/login.css">
 
 <body>
 <?php include_once('../app/functions.php');?>

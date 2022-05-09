@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+
+:root {
+    --mainFont: Work Sans;
+    --secondaryFont: Itim;
+    --mainBlue: #2E4172;
+    --secondaryBlue: #3F5AA0;
+    --mainGreen: #A7D7B2;
+    --secondaryGreen: #68A075;
+    --white: white;
+    --ctaColor: #F78989;
+}
+
+.login-page{
+    font-family: var(--mainFont);
+}
+
+.signup-form{
+    background-color: var(--mainGreen); 
+    border-radius: 10px;
+}
+
+.login-form{
+    border-radius: 10px;
+}
+
+.green{
+    color: var(--secondaryGreen);
+}
+
+.login-btn{
+    background-color: var(--secondaryBlue);
+    color: var(--white);
+}
+
+.signup-btn{
+    background-color: var(--secondaryGreen);
+    border-radius: 10px;
+}
+

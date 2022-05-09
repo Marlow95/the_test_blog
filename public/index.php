@@ -7,14 +7,14 @@
 <div class="cta m-4 p-4 text-center">
   <p>
     This is your new your community 
-    of like-minded peers to help you reach or exceed your digital marketing goals.
+    of like-minded peers to help you <span class="cta-words">reach or exceed</span> your digital marketing goals.
   </p>
   <p>
   Please feel free to browse through our blog posts and comment on any posts you may like. 
   </p>
   <p>
     You can also sign up for our newsletter so that 
-    you can join our elite and private facebook group of suceessful professionals.
+    you can <span class="cta-words">join our elite and private</span> facebook group of suceessful professionals.
   </p>
 
   <a class="btn btn-lg cta-btn m-4 p-4" href="http://">JOIN OUR ELITE COMMUNITY</a>

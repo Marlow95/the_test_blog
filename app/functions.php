@@ -15,7 +15,7 @@ function renderPosts(){
                 <div class="card-body">
                     <h3 class="card-title"><a href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a></h3>
                     <p class="card-text">$posts->post_bio</p>
-                    <a class="btn btn-lg btn-success" 
+                    <a class="btn btn-lg" style="background-color: #68A075"
                     href="article.php?id=$posts->post_id&author=$posts->user_id">Read More</a>
                 </div>
             </div>

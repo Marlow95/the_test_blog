@@ -64,7 +64,7 @@
                 </div>
                 <div class="form-group m-4 row">
                     <div class="col-sm-10">
-                    <button type="submit" name="submit_contact" class="btn btn-primary">Submit</button>
+                    <button type="submit" name="submit_contact" class="btn btn-lg text-white" style="background-color: #3F5AA0;">Submit</button>
                     </div>
                 </div>
             </form>
