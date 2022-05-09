@@ -37,13 +37,18 @@ function renderArticle(){
         $card = <<<DELIMITER
         <article class="p-4">
             <h2>$posts->post_title</h2>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a class="btn btn-outline-primary" href="post.php">Blog Posts</a></li>
-                <li class="breadcrumb-item active text-white" aria-current="page">$posts->post_title</li>
-            </ol>
-            </nav>
             <hr>
+            <nav aria-label="breadcrumb">
+                <div class="justify-content-start">
+                    <em><img src="../public/img/rating.png"> Rating $posts->post_rating</em>
+                </div>
+                <em>
+                <ol class="breadcrumb justify-content-end" style="position: relative; bottom: 2.3em;">
+                    <li class="breadcrumb-item"><a href="post.php">Blog Posts</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">$posts->post_title</li>
+                </ol>
+                </em>
+            </nav>
             <p>$posts->post_body</p>
         </article>
         DELIMITER;
@@ -61,10 +66,9 @@ function articleAuthor(){
     
     foreach($article_author as $author){
         $card = <<<DELIMITER
-        <div class="card">
-        <h5 class="card-header">Author</h5>
-        <div class="card-body">
-        <p class="card-text">$author->firstname $author->lastname</p>
+        <div class="p-4">
+            <h2>Author of This Post</h2>
+            <p>$author->firstname $author->lastname</p>
         </div>
         DELIMITER;
         echo ucwords($card);

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+
+:root {
+    --mainFont: Work Sans;
+    --secondaryFont: Itim;
+    --mainBlue: #2E4172;
+    --secondaryBlue: #3F5AA0;
+    --mainGreen: #A7D7B2;
+    --white: white;
+    --ctaColor: #F78989;
+}
+
+.contact{
+    background-color: var(--mainGreen);
+}
+
+.contact-btn{
+    background-color: var(--mainGreen);
+}

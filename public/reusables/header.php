@@ -11,6 +11,7 @@ rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCE
 crossorigin="anonymous">
 
 <link rel="stylesheet" href="./css/styles.css">
+<link rel="stylesheet" href="./css/article.css">
 
 <body>
 <?php include_once('../app/functions.php');?>

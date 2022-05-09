@@ -3,22 +3,23 @@
 <div class="container">
     <div class="row">
         <div class="col-8">
-            <div class="mt-4 p-4 rounded text-white" 
-            style="background-color: #2E4172;">
-            <?php renderArticle(); ?>
+            <div class="mt-4 p-4 rounded">
+                <?php renderArticle(); ?>
             </div>
-            
         </div>
 
         <div class="col-4 mt-4">
             <h2>Categories</h2>
             <?php renderCategories(); ?>
+            <?php articleAuthor(); ?>
         </div>
         <?php
             $title_comment = isset($_POST['title_comment']) ? htmlspecialchars($_POST['title_comment']) : '';
             $message = isset($_POST['message']) ? htmlspecialchars($_POST['message']) : '';
         ?>
-        <div class="col-8 mt-4 border bg-light text-dark">
+        
+        <div class="col-8 mt-4 border contact text-white">
+            
             <h1 class="m-4">Post A Comment</h1>
             <form method="post">
                 <div class="form-group m-4 row">
@@ -35,7 +36,7 @@
 
                 <div class="form-group m-4 row">
                     <div class="col-sm-10">
-                    <button type="submit" name="submit_contact" class="btn btn-outline-primary">Submit</button>
+                    <button type="submit" name="submit_contact" class="btn btn-light btn-lg">Submit</button>
                     </div>
                 </div>
                 <?php 
