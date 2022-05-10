@@ -34,6 +34,7 @@
     right: 9px;
     background-color: var(--mainGreen);
     width: 140px;
+    border-radius: 0 10px 10px 0;
 }
 
 .search-btn img {
@@ -56,6 +57,15 @@
     color: var(--white);
     font-size: 5rem;
 }
+
+.ellipse{
+    position: relative;
+    bottom: 10.8rem;
+    left: 19rem;
+    z-index: 1;
+}
+
+
 /*Call to Action*/
 .cta{
     font-family: var(--secondaryFont);
@@ -80,6 +90,7 @@
     background-color: var(--secondaryBlue);
     display: flex;
     justify-content: center;
+    font-family: var(--mainFont);
 }
 
 .posts-header{
@@ -97,7 +108,5 @@
 .footer{
     font-family: var(--mainFont);
 }
-/*Styles for the render card functions styling*/
-.front-card{
-    width: 18rem;
-}
+
+

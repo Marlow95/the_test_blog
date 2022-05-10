@@ -9,14 +9,17 @@ function renderPosts(){
 
     foreach($get_all_posts as $posts){
         $card = <<<DELIMITER
-        <div class="col-3 mt-4 p-4">
-            <div class="front-card card m-3">
+        <div class="col-3 mt-4 p-4" >
+            <div class="card m-3" style="width: 20rem; border-radius: 10px;">
                 <img class="card-img-top" src="https://placehold.co/250x250" alt="Card image cap">
                 <div class="card-body">
-                    <h3 class="card-title"><a href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a></h3>
-                    <p class="card-text">$posts->post_bio</p>
-                    <a class="btn btn-lg" style="background-color: #68A075"
-                    href="article.php?id=$posts->post_id&author=$posts->user_id">Read More</a>
+                    <h3 class="card-title">
+                        <a style="color: #2E4172;" href="article.php?id=$posts->post_id&author=$posts->user_id">$posts->post_title</a>
+                    </h3>
+                    <p class="card-text" style="color: #2E4172;">$posts->post_bio</p>
+                    <a class="btn btn-lg" style="background-color: #68A075; color: white;" href="article.php?id=$posts->post_id&author=$posts->user_id">
+                        Read More
+                    </a>
                 </div>
             </div>
         </div>   

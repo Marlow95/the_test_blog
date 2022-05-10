@@ -4,6 +4,7 @@
 <div class="jumbo">
   <h1 class="p-4 text-center greet"><?= ucwords('Hello, Friend') ?></h1>
 </div>
+<img class="ellipse" src="./img/Ellipse 1.png" alt="white-bg">
 <div class="cta m-4 p-4 text-center">
   <p>
     This is your new your community 
