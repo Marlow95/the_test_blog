@@ -87,9 +87,9 @@ function renderPostPage(){
     foreach($get_all_posts as $posts){
         $card = <<<DELIMITER
             <div class="col">
-                <div class="card mb-3 mt-3" style="height: 40rem;">
+                <div class="card mb-3 mt-3 col" style="height: 40rem; border-radius: 10px;">
                     <img src="https://placehold.co/300x150/png" height="300px" class="card-img-top" alt="...">
-                    <div class="card-body rounded text-white" style="background-color:#3F5AA0;">
+                    <div class="card-body text-white" style="background-color:#3F5AA0;">
                     <h4 class="card-title">
                         <a class="card-title text-white" 
                         href="article.php?id=$posts->post_id&author=$posts->user_id">
@@ -100,7 +100,8 @@ function renderPostPage(){
                     <p class="card-text">$posts->post_bio</p>
                     <p class="card-text">
                     <small class="text-white">
-                        <img src="../public/img/rating.png" alt="star"> <strong><em>Ratings: $posts->post_rating | $posts->created_at</em></strong>
+                        <img src="../public/img/rating.png" alt="star"><strong class="m-3"><em>Ratings: $posts->post_rating</em></strong>
+                        <strong style="position: relative; left:9rem;"><em>$posts->created_at</em></strong>
                     </small>
                     </p>
                     </div>
