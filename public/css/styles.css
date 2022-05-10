@@ -30,11 +30,16 @@
 }
 .search-btn {
     position: relative;
-    bottom: 2px;
+    bottom: 2.5px;
     right: 9px;
     background-color: var(--mainGreen);
     width: 140px;
+    height: 3.1rem;
     border-radius: 0 10px 10px 0;
+}
+
+.search-btn:hover{
+    background-color: var(--ctaColor);
 }
 
 .search-btn img {
