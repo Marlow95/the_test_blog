@@ -5,7 +5,7 @@ Then execute this plan by applying functional and object-oriented programming. T
 String Manipulation. Which is one of the most critical skills when programming the backend. Always improving your fundamentals and applying the new things you know in better ways is a core skill for building better programs.
 
 For now the functionality I wanted to test is pretty much done with. Some things I might add in the future are
-an Admin Dashboard, Dynamic Post Ratings, and Pagination. After I finish the Dashboad for Basic Users I will do some UI updates, unit tests, and refactoring.
+an Admin Dashboard, Dynamic Post Ratings, and Pagination.
 
 Figma UI Designs (That Were Designed By Me)
 p.s. I've been practicing with Figma and got better.
