@@ -47,7 +47,8 @@ if (!isset($_SESSION['user_id'])) {
         </div>
 
     </div>
-
+</div>
+<div class="m-4" style="position: relative; top: 16rem;">
     <?php require_once(__DIR__ . "/reusables/footer.php") ?>
     <?php }; ?>
 </div>
