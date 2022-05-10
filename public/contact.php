@@ -84,6 +84,4 @@
     </div>
 </div>
 
-<div class="m-4 p-4" style="position: relative; top: 6rem;">
 <?php require_once(__DIR__ . "/reusables/footer.php") ?>
-</div>
