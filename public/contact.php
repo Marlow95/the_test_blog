@@ -9,12 +9,17 @@
 
              $mail->isSMTP();
              $mail->Host = 'smtp.gmail.com';
-             $mail->SMTPAuth   = true; 
-             $mail->Username = $dotenv->load()['EMAIL'];
-             $mail->Password = $dotenv->load()['EMAIL_PASS'];
+             $mail->SMTPAuth   = true;
+             //Code is commented out beacuse it is used for development and not production 
+             //$mail->Username = $dotenv->load()['EMAIL'];
+             $mail->Username = $_ENV['EMAIL'];
+             //$mail->Password = $dotenv->load()['EMAIL_PASS'];
+             $mail->Password = $_ENV['EMAIL_PASS'];
              $mail->Port = 465;
-             $mail->setFrom($dotenv->load()['EMAIL']);
-             $address = $dotenv->load()['EMAIL'];
+             //$mail->setFrom($dotenv->load()['EMAIL']);
+             $mail->setFrom($_ENV['EMAIL']);
+             //$address = $dotenv->load()['EMAIL'];
+             $address = $_ENV['EMAIL'];
              $mail->SMTPSecure = 'ssl';
             
             if(isset($_POST['submit_contact'])) {
