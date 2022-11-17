@@ -1,5 +1,5 @@
-<?php require_once(__DIR__ . "/reusables/header.php") ?>
-<?php require_once(__DIR__ . "/reusables/navbar.php") ?>
+<?php include_once(__DIR__ . "/reusables/header.php") ?>
+<?php include_once(__DIR__ . "/reusables/navbar.php") ?>
 
 <div class="jumbo">
   <h1 class="p-4 text-center greet"><?= ucwords('Hello, Friend') ?></h1>
@@ -32,4 +32,4 @@
   </div>
 </div>
 
-<?php require_once(__DIR__ . "/reusables/footer.php") ?>
+<?php include_once(__DIR__ . "/reusables/footer.php") ?>

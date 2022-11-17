@@ -2,7 +2,7 @@
 <html lang="en">
 <meta charset="UTF-8">
 <title>
-    <?php const TITLE = 'The Test Blog DotCom'; ?>
+    <?php const TITLE = 'The Test Blog DotCom '; ?>
     <?= TITLE ?>
 </title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
