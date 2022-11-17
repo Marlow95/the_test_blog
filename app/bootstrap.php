@@ -24,6 +24,8 @@ $db = new Database(
     $dotenv->load()['DB_PASS']
 );
 
+
+
 $db->connectDatabase();
 
 
